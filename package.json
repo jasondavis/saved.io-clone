@@ -1,0 +1,32 @@
+{
+  "name": "saved-clone-v1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cheerio": "^1.0.0-rc.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "date-fns": "^2.15.0",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
+    "got": "^11.5.2",
+    "http-errors": "~1.6.3",
+    "is-url": "^1.2.4",
+    "mongoose": "^5.9.29",
+    "morgan": "~1.9.1",
+    "node-sass-middleware": "0.11.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

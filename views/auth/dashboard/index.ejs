@@ -1,0 +1,21 @@
+<% include ./components/searchBar %>
+
+<% for (const bookmark of bookmarks) { %>
+    <div class="main-section__item">
+        <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=<%= bookmark.url %>" alt="icon" class="main-section__icon">
+
+        <a class="main-section__title" href="<%= bookmark.url%>" target="_blank"><%= bookmark.title %> </a>
+
+        <div class="main-section__actions">
+            <a class="main-section__action" href="<%= `/bookmark/${bookmark.id}` %> ">Edit</a>
+
+            <form id="deleteForm" action="<%= `/bookmark/${bookmark.id}/delete`%>" method="POST">
+                <a id="deleteBtn" class="main-section__action" href="#">Delete</a>
+            </form>
+        </div>
+
+        <div class="main-section__time">
+            <%= dtFormat(new Date(), bookmark.created_at) %> ago
+        </div>
+    </div>
+<% } %> 

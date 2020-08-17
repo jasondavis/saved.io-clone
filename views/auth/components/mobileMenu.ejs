@@ -1,0 +1,14 @@
+<div class="mobile-menu">
+    <div class="mobile-menu__bar">
+        <i id="mobile-menu__button" class="mobile-menu__btn fas fa-bars"></i>
+        <h3 class="mobile-menu__logo">Bookmark Storage</h3>
+    </div>
+
+    <div id="mobile-menu__menu" class="mobile-menu__menu">
+        <a class="mobile-menu__link" href="/">Home</a>
+        <a class="mobile-menu__link" href="#">About</a>
+        <% if (user) { %>
+            <a class="mobile-menu__link" href="/logout">Logout</a>
+        <% } %> 
+    </div>
+</div>

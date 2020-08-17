@@ -1,0 +1,17 @@
+<div class="notifications">
+    <% if (errorMsg[0] !== undefined) { %> 
+        <div class="notifications">
+            <div class="notifications__notification err">
+                <h3><%= errorMsg %> </h3>
+            </div>
+        </div>
+    <% } %> 
+    
+    <% if (successMsg[0] !== undefined) { %> 
+        <div class="notifications">
+            <div class="notifications__notification succ">
+                <h3><%= successMsg %> </h3>
+            </div>
+        </div>
+    <% } %> 
+</div>

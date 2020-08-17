@@ -1,0 +1,17 @@
+<div class="container">
+    <h1 class="page__title">Edit Bookmark</h1>
+
+    <form action="<%= `/bookmark/${bookmark.id}` %>" method="POST" class="form">
+        <div class="form__control">
+            <label class="form__title" for="title">Bookmark Title</label>
+            <input class="form__text" type="text" value="<%= bookmark.title %>" name="title">
+        </div>
+
+        <div class="form__control">
+            <label class="form__title" for="url">Url</label>
+            <input class="form__text-disabled" type="text" value="<%= bookmark.url %>" name="url" disabled>
+        </div>
+
+        <button class="form__submit" type="submit">Save</button>
+    </form>
+</div>
