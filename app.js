@@ -15,10 +15,6 @@ flash 					= require('connect-flash'),
 isUrl 					= require('is-url'),
 path 					= require('path');
 
-// utils
-const { createBookmark } = require('./utils/bookmarkUtils');
-
-
 // initialize application
 const app = express();
 
@@ -55,6 +51,8 @@ app.use((req, res, next) => {
 	res.locals.successMsg = req.flash('successMsg');
 	res.locals.errorMsg = req.flash('errorMsg');
 	res.locals.stylesheetUrl = '/stylesheets/style.css';
+	res.locals.path = req.originalUrl.slice(1);
+	res.locals.query = req.query;
 	res.locals.user = req.user;
 	next();
 });
@@ -70,18 +68,9 @@ app.use((req, res, next) => {
 	if (isUrl(param)) {
 		if (!req.user) {
 			req.flash('errorMsg', 'Please login to create a bookmark');
-			res.redirect('/login');
+			res.redirect(`/login?param=${param}`);
 		} else {
-			const bookmark = createBookmark(req, res, param)
-			.then(bookmark => {
-				if (!bookmark) {
-					req.flash('errorMsg', 'Could not create bookmark');
-					res.redirect('/dashboard');
-				} else {
-					req.flash('successMsg', 'Bookmark created successfully');
-					res.redirect(`/bookmark/${bookmark.id}`);
-				}
-			});
+			res.redirect(`/bookmark?param=${param}`);
 		}
 	} else {
 		next(createError(404));

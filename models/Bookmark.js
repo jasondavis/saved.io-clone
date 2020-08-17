@@ -5,6 +5,11 @@ const bookmarkSchema = new mongoose.Schema({
 
     url: String,
 
+    description: {
+        type: String,
+        default: ''
+    },
+
     user_id: String,
     
     created_at: {

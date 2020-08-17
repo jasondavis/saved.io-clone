@@ -74,7 +74,7 @@ router.post('/register', (req, res, next) => {
  * @GET login page
  */
 router.get('/login', forwardAuthenticated, (req, res, next) => {
-	res.render('login', { title: 'Login Page' })
+	res.render('login', { title: 'Login Page' });
 })
 
 
@@ -82,7 +82,13 @@ router.get('/login', forwardAuthenticated, (req, res, next) => {
  * @POST login page
  */
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res) => {
-	res.redirect('/dashboard');
+	const param = req.query.param;
+
+	if (param) {
+		res.redirect(`/bookmark?param=${param}`)
+	} else {
+		res.redirect('/dashboard');
+	}
 });
 
 
