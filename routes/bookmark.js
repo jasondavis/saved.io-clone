@@ -2,6 +2,7 @@
  * Modules
  */
 const express = require('express'),
+dtFormat = require('date-fns/formatDistance'),
 cheerio = require('cheerio'),
 got = require('got'),
 router = express.Router();
@@ -56,6 +57,21 @@ router.post('/', ensureAuthenticated, (req, res) => {
 
     req.flash('successMsg', 'Bookmark created successfully!');
     res.redirect('/dashboard');
+});
+
+// search
+router.get('/search', ensureAuthenticated, (req, res) => {
+    const query = req.query.q;
+    const regex = new RegExp(query, 'i');
+    
+    Bookmark.find({title: regex}, (err, bookmarks) => {
+        res.render('auth/dashboard/index', {
+            bookmarks,
+            dtFormat,
+            title: 'Search Results',
+            layout: 'auth/layout'
+        });
+    });
 });
 
 // index

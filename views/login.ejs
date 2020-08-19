@@ -1,7 +1,4 @@
 <h1>Login</h1>
-<% if (errorMsg[0] !== undefined) { %>
-    <h3><%= errorMsg %></h3>
-<% } %>
 
 <form action="<%- query.param !== undefined ? `/login?param=${query.param}` : `/login` %> " method="POST">
     <input type="email" name="email" placeholder="Email.." required>

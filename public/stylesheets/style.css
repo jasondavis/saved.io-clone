@@ -337,6 +337,11 @@ ul {
   color: #fff;
 }
 
+.section-title {
+  font-size: 1.5rem;
+  margin: 10px 20px;
+}
+
 .container {
   padding: 2% 5%;
 }
@@ -395,6 +400,10 @@ ul {
     display: -ms-flexbox;
     display: flex;
     padding: 0 0 0 2rem;
+  }
+  .section-title {
+    margin-top: 10px;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
