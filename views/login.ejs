@@ -3,7 +3,7 @@
 <form class="form" action="<%- query.param !== undefined ? `/login?param=${query.param}` : `/login` %> " method="POST">
     <div class="form__control">
         <label class="form__title" for="email">Email</label>
-        <input class="form__text" type="email" name="email" required>
+        <input class="form__text" type="email" name="email" required autofocus>
     </div>
 
     <div class="form__control">

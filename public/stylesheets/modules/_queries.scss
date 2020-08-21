@@ -1,5 +1,5 @@
 @media (max-width: 1404px) {
-    .left-bar { width: 18%; }
+    .left-bar { width: 20%; }
 
     .main-section {
         &__title { flex: 1; }
@@ -8,6 +8,7 @@
     }
 }
 
+// mobile
 @media (max-width: 1052px) {
     .app { flex-direction: column; }
 
