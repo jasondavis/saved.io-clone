@@ -21,7 +21,7 @@ path 					= require('path');
 const app = express();
 
 // connect to the database
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 
 // configuration
 app.set('views', path.join(__dirname, 'views'));						// set views folder
