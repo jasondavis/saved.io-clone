@@ -1,13 +1,16 @@
 <div class="mobile-menu">
     <div class="mobile-menu__bar">
-        <h3 class="mobile-menu__logo">Bookmark Storage</h3>
+        <a class="mobile-menu__logo" href="/">Bookmark Storage</a>
         <i id="mobile-menu__button" class="mobile-menu__btn fas fa-bars"></i>
     </div>
 
     <div id="mobile-menu__menu" class="mobile-menu__menu">
-        <a class="mobile-menu__link" href="/">Home</a>
         <% if (user) { %>
+            <a class="mobile-menu__link" href="/">Dashboard</a>
             <a class="mobile-menu__link" href="/logout">Logout</a>
-        <% } %> 
+        <% } else { %>
+            <a class="mobile-menu__link" href="/register">Register</a>
+            <a class="mobile-menu__link" href="/login">Login</a>
+        <% } %>  
     </div>
 </div>

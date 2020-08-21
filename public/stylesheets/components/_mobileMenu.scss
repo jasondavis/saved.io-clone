@@ -22,6 +22,12 @@
 
     &__logo {
         color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        &:hover {
+            color: #333;
+        }
     }
 
     &__menu {
@@ -36,7 +42,8 @@
         padding: 12px 0 12px 20px;
 
         &:hover {
-            background-color: $primary;
+            color: #fff;
+            background-color: #f45d73;
         }
     }
 }

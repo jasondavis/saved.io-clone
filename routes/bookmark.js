@@ -88,9 +88,9 @@ router.get('/:id', ensureAuthenticated, (req, res) => {
 
 // update
 router.post('/:id', ensureAuthenticated,(req, res) => {
-    const { title, description } = req.body;
+    const { title, description, url } = req.body;
 
-    Bookmark.findByIdAndUpdate(req.params.id, {title, description}, (err, bookmark) => {
+    Bookmark.findByIdAndUpdate(req.params.id, {title, description, url}, (err, bookmark) => {
         if (err) res.send(err);
         
         req.flash('successMsg', 'Bookmark updated successfully');
