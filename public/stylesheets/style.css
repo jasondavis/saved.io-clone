@@ -361,13 +361,13 @@ ul {
   background-color: #fff;
 }
 
-.section-title {
+.section__title {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin: 15px 0;
 }
 
 .container {
-  padding: 2% 5%;
+  padding: 2% 30%;
 }
 
 .flex {
@@ -445,6 +445,9 @@ ul {
   }
   .navbar {
     display: none;
+  }
+  .container {
+    padding: 2% 5%;
   }
 }
 /*# sourceMappingURL=style.css.map */
