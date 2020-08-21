@@ -8,12 +8,14 @@ cookieParser 			= require('cookie-parser'),
 createError 			= require('http-errors'),
 mongoose 				= require('mongoose'),
 passport 				= require('passport'),
+favicon 				= require('serve-favicon'),
 express 				= require('express'),
 logger 					= require('morgan'),
 dotenv 					= require('dotenv').config(),
 flash 					= require('connect-flash'),
 isUrl 					= require('is-url'),
 path 					= require('path');
+
 
 // initialize application
 const app = express();
@@ -22,24 +24,25 @@ const app = express();
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 // configuration
-app.set('views', path.join(__dirname, 'views'));			// set views folder
-app.set('view engine', 'ejs');								// set view engine
-app.use(expressLayouts);									// enable ejs layouts
-app.use(express.json());									// json parser
-app.use(cookieParser());									// cookie parser
-app.use(express.urlencoded({ extended: false }));			// form data parser
-app.use(expressSession({									// express session config
+app.set('views', path.join(__dirname, 'views'));						// set views folder
+app.set('view engine', 'ejs');											// set view engine
+app.use(expressLayouts);												// enable ejs layouts
+app.use(express.json());												// json parser
+app.use(cookieParser());												// cookie parser
+app.use(express.urlencoded({ extended: false }));						// form data parser
+app.use(expressSession({												// express session config
 	secret: process.env.SESSION_SECRET,
 	resave: true,
 	saveUninitialized: true
 }));
-app.use(passport.initialize());								// initialize passport
-app.use(passport.session());								// initialize passport session
-app.use(flash());											// flash messages engine
-app.use(express.static(path.join(__dirname, 'public')));	// set static folder
-app.use(logger('dev'));										// set server logger
-require('./config/passport')(passport);						// passport config
-app.use(sassMiddleware({									// use sass middleware to compile/decompile scss files
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));		// favicon config
+app.use(passport.initialize());											// initialize passport
+app.use(passport.session());											// initialize passport session
+app.use(flash());														// flash messages engine
+app.use(express.static(path.join(__dirname, 'public')));				// set static folder
+app.use(logger('dev'));													// set server logger
+require('./config/passport')(passport);									// passport config
+app.use(sassMiddleware({												// use sass middleware to compile/decompile scss files
 	src: path.join(__dirname, 'public'),
 	dest: path.join(__dirname, 'public'),
 	indentedSyntax: false,

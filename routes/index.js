@@ -23,7 +23,7 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
  * @GET index page
  */
 router.get('/', forwardAuthenticated, (req, res, next) => {
-	res.render('index', { title: 'Home Page' });
+	res.render('index', { title: 'Home' });
 });
 
 
@@ -37,7 +37,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res, next) => {
 			if (err) return res.redirect('/dashboard');
 
 			res.render('auth/dashboard/index', {
-				title: 'Dashboard Page',
+				title: 'Dashboard',
 				user: req.user,
 				bookmarks: bookmarks,
 				layout: 'auth/layout',
@@ -51,7 +51,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res, next) => {
  * @GET register page
  */
 router.get('/register', forwardAuthenticated, (req, res, next) => {
-	res.render('register', { title: 'Register Page' });
+	res.render('register', { title: 'Register' });
 })
 
 
@@ -75,7 +75,7 @@ router.post('/register', (req, res, next) => {
  * @GET login page
  */
 router.get('/login', forwardAuthenticated, (req, res, next) => {
-	res.render('login', { title: 'Login Page' });
+	res.render('login', { title: 'Login' });
 })
 
 
