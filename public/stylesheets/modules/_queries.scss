@@ -1,0 +1,42 @@
+@media (max-width: 1404px) {
+    .left-bar { width: 18%; }
+
+    .main-section {
+        &__title { flex: 1; }
+
+        &__time { display: none; }
+    }
+}
+
+@media (max-width: 1052px) {
+    .app { flex-direction: column; }
+
+    .left-bar { display: none; }
+
+    .mobile-menu { display: flex; }
+
+    .form__submit { width: 100%; }
+
+    .main-section {
+        &__title {
+            white-space: initial;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+            -webkit-box-orient: vertical;
+        }
+
+        &__item {
+            padding: 20px 15px;
+        }
+
+        &__actions { 
+            display: flex;
+            padding: 0 0 0 2rem;
+        }
+    }
+
+    .section-title {
+        margin-top: 10px;
+        text-align: center;
+    }
+}

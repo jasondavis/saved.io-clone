@@ -1,17 +1,15 @@
 <div class="notifications">
     <% if (errorMsg[0] !== undefined) { %> 
-        <div class="notifications">
-            <div class="notifications__notification err">
-                <h3><%= errorMsg %> </h3>
-            </div>
+        <div class="notifications__notification err">
+            <h3 class="notifications__text"><%= errorMsg %></h3>
+            <i class="notifications__exit fas fa-times"></i>
         </div>
     <% } %> 
     
     <% if (successMsg[0] !== undefined) { %> 
-        <div class="notifications">
-            <div class="notifications__notification succ">
-                <h3><%= successMsg %> </h3>
-            </div>
+        <div class="notifications__notification succ">
+            <h3 class="notifications__text"><%= successMsg %></h3>
+            <i class="notifications__exit fas fa-times"></i>
         </div>
     <% } %> 
 </div>

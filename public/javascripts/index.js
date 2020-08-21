@@ -1,7 +1,6 @@
 const mobileButton      = document.getElementById('mobile-menu__button'),
 mobileMenu              = document.getElementById('mobile-menu__menu'),
-deleteForm              = document.getElementById('deleteForm'),
-deleteBtns              = document.querySelectorAll('#deleteBtn'),
+deleteForms              = document.querySelectorAll('#deleteForm'),
 notifications           = document.querySelectorAll('.notifications__notification'),
 
 notificationDuration    = 5000;
@@ -11,16 +10,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // toggle mobile menu
     mobileButton.addEventListener('click', () => mobileMenu.classList.toggle('flex'));
 
-    // event listener for every delete button of every item
-    for (const btn of deleteBtns) {
-        btn.addEventListener('click', (event) => {
+    // loop every delete form node
+    for (const deleteForm of deleteForms) {
+        deleteForm.children.deleteBtn.addEventListener('click', (event) => {
             event.preventDefault();
             deleteForm.submit();
         });
     }
 
-    // remove notification after @notificationDuration amount of time
+    // loop every notification node
     for (const notification of notifications) {
+        // remove notification node after @notificationDuration amount of time
         setTimeout(() => { notification.remove() }, notificationDuration);
+
+        // on click on the X icon, remove notification node
+        notification.children[1].addEventListener('click', () => {
+            notification.remove();
+        });
     }
 });

@@ -1,0 +1,39 @@
+.left-bar {
+    height: 100vh;
+    padding: 0 20px;
+    border-right: 1px solid $border;
+    width: 15vw;
+
+    &__logo {
+        font-size: 1.5rem;
+        margin: 30px 0;
+        color: $primary;
+        text-align: center;
+    }
+
+    &__section {
+        &:not(:last-child) { margin-bottom: 40px; }
+    }
+
+    &__title {
+        font-size: 1.15rem;
+        font-weight: lighter;
+        color: $secondary;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+
+    &__link {
+        font-weight: bold;
+        color: $link;
+        width: fit-content;
+
+        &:not(:last-child) { margin-bottom: 5px; }
+        &:hover { color: $primary; }
+    }
+}

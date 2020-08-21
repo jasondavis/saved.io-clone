@@ -1,0 +1,22 @@
+:root { font-size: 16px; }
+
+* { box-sizing: border-box; }
+
+html, body {
+    overflow-x: hidden;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+html, body, h1, p, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

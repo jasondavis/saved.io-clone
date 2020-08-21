@@ -79,7 +79,7 @@ router.get('/:id', ensureAuthenticated, (req, res) => {
     const bookmark = Bookmark.findById(req.params.id, (err, bookmark) => {
         res.render('auth/bookmark/index', {
             bookmark: bookmark,
-            title: `Bookmark - ${bookmark.title}`,
+            title: `Edit Bookmark - ${bookmark.title}`,
             layout: 'auth/layout'
         });
     });

@@ -1,0 +1,74 @@
+.main-section {
+    flex: 1;
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+    width: 100%;
+
+    overflow-x: hidden !important;
+
+    &__search, &__create {
+        background: #fff;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $border;
+        
+        padding: 20px 25px;
+        font-size: 1rem;
+        font-family: 'Anonymous Pro', monospace;
+
+        &:hover {
+            background-color: $hover;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 20px 30px;
+        border-bottom: 1px solid $border;
+
+        &:hover { background-color: $hover; }
+        &:hover .main-section__actions { display: flex; }
+        &:hover .main-section__time { margin-left: 0; }
+    }
+
+    &__title {
+        margin-left: 7%;
+        color: $link;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .9rem;
+        align-self: flex-start;
+        max-width: 50%;
+
+        &:hover { color: $primary; }
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__time {
+        text-align: right;
+        color: $secondary;
+        min-width: 13%;
+        margin-left: auto;
+    }
+
+    &__actions {
+        display: none;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: .9rem;
+        justify-content: flex-end;
+        margin-left: auto;
+        padding: 0 5rem;
+    }
+
+    &__action {
+        color: $link;
+
+        &:not(:last-child) { margin-right: 15px; }
+        &:hover { color:$primary }
+    }
+}

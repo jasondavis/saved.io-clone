@@ -1,0 +1,38 @@
+.notifications {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__notification {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        max-width: 100%;
+
+        // &:not(:last-child) {
+        //     margin-bottom: 5px;
+        // }
+
+        &.err {
+            background: $error;
+            color: #fff;
+        }
+
+        &.succ {
+            background: $success;
+            color: #fff;
+        }
+    }
+
+    &__text {
+        font-size: 1rem;
+    }
+
+    &__exit {
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: 30px;
+    }
+}
