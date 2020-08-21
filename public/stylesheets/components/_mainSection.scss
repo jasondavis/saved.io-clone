@@ -35,13 +35,10 @@
 
     &__title {
         margin-left: 7%;
-        color: $link;
         font-family: Arial, Helvetica, sans-serif;
         font-size: .9rem;
         align-self: flex-start;
         max-width: 50%;
-
-        &:hover { color: $primary; }
 
         white-space: nowrap;
         overflow: hidden;
@@ -66,9 +63,7 @@
     }
 
     &__action {
-        color: $link;
 
         &:not(:last-child) { margin-right: 15px; }
-        &:hover { color:$primary }
     }
 }

@@ -12,7 +12,7 @@
 
 .section-title {
     font-size: 1.5rem;
-    margin: 10px 20px;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -20,3 +20,12 @@
 }
 
 .flex { display: flex; }
+
+.legend {
+    border-top: 1px solid #000;
+    margin-top: 20px;
+    display: block;
+    width: fit-content;
+    padding-top: 10px;
+    font-size: 1.1rem;
+}

@@ -8,7 +8,9 @@ notificationDuration    = 5000;
 // When DOM is loaded
 window.addEventListener('DOMContentLoaded', (event) => {
     // toggle mobile menu
-    mobileButton.addEventListener('click', () => mobileMenu.classList.toggle('flex'));
+    if (mobileMenu) {
+        mobileButton.addEventListener('click', () => mobileMenu.classList.toggle('flex'));
+    }
 
     // loop every delete form node
     for (const deleteForm of deleteForms) {

@@ -14,22 +14,22 @@ module.exports = (passport) => {
     passport.use(
         'local',
         new LocalStrategy(
-            { usernameField: 'email' },
-            (email, password, done) => {
+            { passReqToCallback: true, usernameField: 'email' },
+            (req, email, password, done) => {
                 User.findOne({ email }, (err, user) => {
-                    const falseMessage = { message: 'Invalid Email/Password' };
-
                     if (err) return done(err);
 
-                    if (!user) return done(null, false, falseMessage);
-
-                    bcrypt.compare(password, user.password).then(function (isMatch) {
-                        if (!isMatch) {
-                            return done(null, false, falseMessage);
-                        } else {
-                            return done(null, user);
-                        }
-                    });
+                    if (user) {
+                        bcrypt.compare(password, user.password).then(function (isMatch) {
+                            if (!user || !isMatch) {
+                                return done(null, false, req.flash('errorMsg', 'Invalid Email/Password'));
+                            } else {
+                                return done(null, user);
+                            }
+                        });
+                    } else {
+                        return done(null, false, req.flash('errorMsg', 'Invalid Email/Password'));
+                    }
                 });
             }
         )

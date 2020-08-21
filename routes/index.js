@@ -65,7 +65,8 @@ router.post('/register', (req, res, next) => {
 	bcrypt.hash(password, saltRounds).then(passwordHash => {
 		const user = new User({ email: email, password: passwordHash });
 		user.save();
-		res.redirect('/');
+		req.flash('successMsg', 'You registered successfully! Now login your account.')
+		res.redirect('/login');
 	});
 });
 
@@ -87,6 +88,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
 	if (param) {
 		res.redirect(`/bookmark?param=${param}`)
 	} else {
+		req.flash('successMsg', 'You\'ve logged in successfully!')
 		res.redirect('/dashboard');
 	}
 });

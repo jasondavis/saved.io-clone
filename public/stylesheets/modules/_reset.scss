@@ -14,6 +14,11 @@ html, body, h1, p, h3 {
 
 a {
     text-decoration: none;
+    color: $link;
+
+    &:hover {
+        color: $primary;
+    }
 }
 
 ul {

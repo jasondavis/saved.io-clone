@@ -30,10 +30,8 @@
 
     &__link {
         font-weight: bold;
-        color: $link;
         width: fit-content;
 
         &:not(:last-child) { margin-bottom: 5px; }
-        &:hover { color: $primary; }
     }
 }
