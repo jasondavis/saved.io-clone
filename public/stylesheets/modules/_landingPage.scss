@@ -1,0 +1,71 @@
+.welcome-section {
+
+    &__logo {
+        color: $primary;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__primary-title {
+        color: $primary;
+    }
+
+    &__secondary-title {
+        margin-top: 2.2rem;
+        color: #595959;
+
+        span {
+            color: $primary;
+        }
+    }
+}
+
+.cta {
+    display: flex;
+    margin-top: 40px;
+    width: fit-content;
+
+    &__button {
+        font-size: .9rem;
+        text-align: center;
+        border: 1px solid $primary;
+        padding: 10px 20px;
+
+        // register button
+        &:nth-child(1) {
+            color: #fff;
+            background-color: $primary;
+            margin-right: 20px;
+
+            &:hover {
+                background-color: #fc5f77;
+            }
+        }
+
+        // login button
+        &:nth-child(2) {
+            color: $primary;
+
+            &:hover {
+                background-color: #fcfcfc;
+            }
+        }
+    }
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+
+    &:hover > &__logo, &:hover > &__name {
+        color: #333;
+    }
+
+    &__logo {
+        margin-right: 1.3rem;
+    }
+
+    &__name, &__logo {
+        color: $primary;
+    }
+}

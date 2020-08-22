@@ -1,6 +1,10 @@
 .form {
     width: 100%;
 
+    &__container {
+        padding: 0 10%;
+    }
+
     &__control {
         display: flex;
         flex-direction: column;

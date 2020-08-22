@@ -1,22 +1,29 @@
-<h1 class="section__title">Create an account</h1>
+<a href="/" class="logo-section">
+    <i class="logo-section__logo far fa-bookmark"></i>
+    <h3 class="logo-section__name">saved.io clone</h3>
+</a>
 
-<form class="form" action="/register" method="POST">
-    <div class="form__control">
-        <label class="form__title" for="email">Email</label>
-        <input class="form__text" type="email" name="email" required>
-    </div>
+<div class="form__container">
+    <h1 class="section__title">Create an account</h1>
 
-    <div class="form__control">
-        <label class="form__title" for="password">Password</label>
-        <input class="form__text" type="password" name="password" required>
-    </div>
+    <form class="form" action="/register" method="POST">
+        <div class="form__control">
+            <label class="form__title" for="email">Email</label>
+            <input class="form__text" type="email" name="email" required>
+        </div>
 
-    <div class="form__control">
-        <label class="form__title" for="password2">Confirm Password</label>
-        <input class="form__text" type="password" name="password2" required>
-    </div>
+        <div class="form__control">
+            <label class="form__title" for="password">Password</label>
+            <input class="form__text" type="password" name="password" required>
+        </div>
 
-    <button class="form__submit" type="submit">Create Account</button>
-</form>
+        <div class="form__control">
+            <label class="form__title" for="password2">Confirm Password</label>
+            <input class="form__text" type="password" name="password2" required>
+        </div>
 
-<h3 class="legend">Already have an account? <a href="/login">Login</a></h3>
+        <button class="form__submit" type="submit">Create Account</button>
+    </form>
+
+    <h3 class="legend">Already have an account? <a href="/login">Login</a></h3>
+</div>

@@ -15,11 +15,11 @@ $background: #fff;
 @import './components/mainSection';
 @import './components/form';
 @import './components/notifications';
-@import './components/navbar';
 
 // modules
 @import './modules/reset';
 @import './modules/app';
+@import './modules/landingPage';
 
 // queries
 @import './modules/queries';

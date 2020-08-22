@@ -1,17 +1,26 @@
-<h1 class="section__title">Login</h1>
+<a href="/" class="logo-section">
+    <i class="logo-section__logo far fa-bookmark"></i>
+    <h3 class="logo-section__name">saved.io clone</h3>
+</a>
 
-<form class="form" action="<%- query.param !== undefined ? `/login?param=${query.param}` : `/login` %> " method="POST">
-    <div class="form__control">
-        <label class="form__title" for="email">Email</label>
-        <input class="form__text" type="email" name="email" required autofocus>
-    </div>
+<div class="form__container">
+    
+    <h1 class="section__title">Login</h1>
 
-    <div class="form__control">
-        <label class="form__title" for="password">Password</label>
-        <input class="form__text" type="password" name="password" required>
-    </div>
+    <form class="form" action="<%- query.param !== undefined ? `/login?param=${query.param}` : `/login` %> "
+        method="POST">
+        <div class="form__control">
+            <label class="form__title" for="email">Email</label>
+            <input class="form__text" type="email" name="email" required autofocus>
+        </div>
 
-    <button class="form__submit" type="submit">Login</button>
-</form>
+        <div class="form__control">
+            <label class="form__title" for="password">Password</label>
+            <input class="form__text" type="password" name="password" required>
+        </div>
 
-<h3 class="legend">Don't have an account? <a href="/register">Register</a></h3>
+        <button class="form__submit" type="submit">Login</button>
+    </form>
+
+    <h3 class="legend">Don't have an account? <a href="/register">Register</a></h3>
+</div>
