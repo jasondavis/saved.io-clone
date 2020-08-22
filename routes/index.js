@@ -61,6 +61,18 @@ router.get('/register', forwardAuthenticated, (req, res, next) => {
 router.post('/register', (req, res, next) => {
 	const { email, password, password2 } = req.body
 	const saltRounds = 10;
+	
+	User.findOne({email}, (err, user) => {
+		if (err) console.log(err);
+
+		if (user) {
+			req.flash('errorMsg', 'There is an account with this email already registered.');
+			res.redirect('/register');
+		} else if (password !== password2) {
+			req.flash('errorMsg', 'Passwords don\' match!');
+			res.redirect('/register');
+		}
+	});
 
 	bcrypt.hash(password, saltRounds).then(passwordHash => {
 		const user = new User({ email: email, password: passwordHash });
