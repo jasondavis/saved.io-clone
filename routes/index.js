@@ -71,14 +71,14 @@ router.post('/register', (req, res, next) => {
 		} else if (password !== password2) {
 			req.flash('errorMsg', 'Passwords don\' match!');
 			res.redirect('/register');
+		} else {
+			bcrypt.hash(password, saltRounds).then(passwordHash => {
+				const user = new User({ email: email, password: passwordHash });
+				user.save();
+				req.flash('successMsg', 'You registered successfully! Now login your account.')
+				res.redirect('/login');
+			});
 		}
-	});
-
-	bcrypt.hash(password, saltRounds).then(passwordHash => {
-		const user = new User({ email: email, password: passwordHash });
-		user.save();
-		req.flash('successMsg', 'You registered successfully! Now login your account.')
-		res.redirect('/login');
 	});
 });
 
