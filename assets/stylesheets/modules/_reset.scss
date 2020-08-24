@@ -25,3 +25,7 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+input:focus {
+    outline: none;
+}
