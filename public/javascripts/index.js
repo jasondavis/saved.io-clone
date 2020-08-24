@@ -15,8 +15,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // loop every delete form node
     for (const deleteForm of deleteForms) {
         deleteForm.children.deleteBtn.addEventListener('click', (event) => {
-            event.preventDefault();
-            deleteForm.submit();
+            if (window.confirm('Are you sure you want to delete this bookmark?')) {
+                event.preventDefault();
+                deleteForm.submit();
+            }
         });
     }
 
