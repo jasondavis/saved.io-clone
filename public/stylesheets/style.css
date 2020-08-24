@@ -131,6 +131,10 @@
   background-color: #f4fafc;
 }
 
+.main-section__create {
+  border-top: 1px solid #f1f2f6;
+}
+
 .main-section__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,6 +143,9 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 20px 30px;
+}
+
+.main-section__item:not(:last-of-type) {
   border-bottom: 1px solid #f1f2f6;
 }
 

@@ -22,12 +22,16 @@
         }
     }
 
+    &__create {
+        border-top: 1px solid $border;
+    }
+
     &__item {
         display: flex;
         align-items: center;
         padding: 20px 30px;
-        border-bottom: 1px solid $border;
 
+        &:not(:last-of-type) { border-bottom: 1px solid $border; }
         &:hover { background-color: $hover; }
         &:hover .main-section__actions { display: flex; }
         &:hover .main-section__time { margin-left: 0; }
