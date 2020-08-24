@@ -21,6 +21,12 @@
         &__container { padding: 2% 5%; }
     }
 
+    .page__title {
+        padding: .8rem 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
     .main-section {
         &__title {
             white-space: initial;

@@ -360,6 +360,10 @@ ul {
   border-color: #787878;
 }
 
+.page__title {
+  padding: 2rem;
+}
+
 .welcome-section__logo {
   color: #ff6b81;
   font-size: 3rem;
@@ -469,6 +473,11 @@ ul {
   }
   .form__container {
     padding: 2% 5%;
+  }
+  .page__title {
+    padding: .8rem 0;
+    font-size: 1.5rem;
+    text-align: center;
   }
   .main-section__title {
     white-space: initial;
