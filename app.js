@@ -24,30 +24,30 @@ const app = express();
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 
 // configuration
-app.set('views', path.join(__dirname, 'views'));						// set views folder
-app.set('view engine', 'ejs');											// set view engine
-app.use(expressLayouts);												// enable ejs layouts
-app.use(express.json());												// json parser
-app.use(cookieParser());												// cookie parser
-app.use(express.urlencoded({ extended: false }));						// form data parser
-app.use(expressSession({												// express session config
+app.set('views', path.join(__dirname, 'views'));								// set views folder
+app.set('view engine', 'ejs');													// set view engine
+app.use(expressLayouts);														// enable ejs layouts
+app.use(sassMiddleware({														// use sass middleware to compile/decompile scss files
+	src: path.join(__dirname, 'assets'),
+	dest: path.join(__dirname, 'assets', 'public'),
+	indentedSyntax: false,
+	outputStyle: 'compressed',
+}));
+app.use(express.json());														// json parser
+app.use(cookieParser());														// cookie parser
+app.use(express.urlencoded({ extended: false }));								// form data parser
+app.use(expressSession({														// express session config
 	secret: process.env.SESSION_SECRET,
 	resave: true,
 	saveUninitialized: true
 }));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));		// favicon config
-app.use(passport.initialize());											// initialize passport
-app.use(passport.session());											// initialize passport session
-app.use(flash());														// flash messages engine
-app.use(express.static(path.join(__dirname, 'public')));				// set static folder
-app.use(logger('dev'));													// set server logger
-require('./config/passport')(passport);									// passport config
-app.use(sassMiddleware({												// use sass middleware to compile/decompile scss files
-	src: path.join(__dirname, 'public'),
-	dest: path.join(__dirname, 'public'),
-	indentedSyntax: false,
-	sourceMap: true
-}));
+app.use(favicon(path.join(__dirname, 'assets', 'public', 'favicon.ico')));		// favicon path
+app.use(passport.initialize());													// initialize passport
+app.use(passport.session());													// initialize passport session
+app.use(flash());																// flash messages engine
+app.use(express.static(path.join(__dirname, 'assets', 'public')));						// set static folder
+app.use(logger('dev'));															// set server logger
+require('./config/passport')(passport);											// passport config
 
 // set global variables
 app.use((req, res, next) => {
