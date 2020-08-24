@@ -76,7 +76,9 @@ app.use((req, res, next) => {
 			res.redirect(`/bookmark?param=${param}`);
 		}
 	} else {
-		next(createError(404));
+		res.status(404).render('404', {
+			title: 'Page Not found'
+		});
 	}
 });
 
